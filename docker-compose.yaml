@@ -11,7 +11,7 @@ services:
       POSTGRES_USER: "admin"
       POSTGRES_DB: "udagramdb"
   reverseproxy:
-    image: reverseproxy
+    image: nebulosus/reverseproxy
     networks:
       - udagram
     ports:
@@ -24,7 +24,7 @@ services:
   backend-user:
     depends_on:
       - udagramd-db
-    image: udagram-api-user
+    image: nebulosus/udagram-api-user
     networks:
       - udagram
     environment:
@@ -40,7 +40,7 @@ services:
   backend-feed:
     depends_on:
       - udagramd-db
-    image: udagram-api-feed
+    image: nebulosus/udagram-api-feed
     networks:
       - udagram
     volumes:
@@ -56,7 +56,7 @@ services:
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
   frontend:
-    image: udagram-frontend:local
+    image: nebulosus/udagram-frontend
     networks:
       - udagram
     ports:

@@ -3,16 +3,16 @@ services:
   reverseproxy:
     build:
       context: ./udagram-reverseproxy
-    image: reverseproxy
+    image: nebulosus/reverseproxy
   backend_user:
     build:
       context: ./udagram-api-user
-    image: udagram-api-user
+    image: nebulosus/udagram-api-user
   backend_feed:
     build:
       context: ./udagram-api-feed
-    image: udagram-api-feed
+    image: nebulosus/udagram-api-feed
   frontend:
     build:
       context: ./udagram-frontend
-    image: udagram-frontend:local
+    image: nebulosus/udagram-frontend

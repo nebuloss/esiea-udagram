@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    kompose.cmd: kompose convert
+    kompose.cmd: kompose convert -o k8s
     kompose.version: 1.27.0 (HEAD)
   creationTimestamp: null
   labels:
@@ -17,7 +17,7 @@ spec:
   template:
     metadata:
       annotations:
-        kompose.cmd: kompose convert
+        kompose.cmd: kompose convert -o k8s
         kompose.version: 1.27.0 (HEAD)
       creationTimestamp: null
       labels:
@@ -44,7 +44,7 @@ spec:
               value: udagram
             - name: URL
               value: http://localhost:8100
-          image: udagram-api-user
+          image: nebulosus/udagram-api-user
           name: backend-user
           resources: {}
       restartPolicy: Always
