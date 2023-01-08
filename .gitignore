@@ -31,6 +31,8 @@ $RECYCLE.BIN/
 postgres_dev/
 logfile
 set_env.sh
+k8s/backend-feed-deployment.yaml
+k8s/udagramd-db-deployment.yaml
 
 .DS_Store
 Thumbs.db
